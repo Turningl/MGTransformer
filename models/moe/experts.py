@@ -75,9 +75,9 @@ class AttentionGate(nn.Module):
         """
         # Reshape expert outputs for attention input
         expert_outputs_t = expert_outputs.permute(1, 0, 2)  # (num_experts, batch_size, output_dim)
-        attention_weights, _ = self.attention(expert_outputs_t, expert_outputs_t, expert_outputs_t)
-        attention_weights = attention_weights.permute(1, 0, 2)  # (batch_size, num_experts, output_dim)
-        return attention_weights
+        attention, _ = self.attention(expert_outputs_t, expert_outputs_t, expert_outputs_t)
+        attention_gate_weights = attention.permute(1, 0, 2)  # (batch_size, num_experts, output_dim)
+        return attention_gate_weights
 
 
 class MixOfExperts(nn.Module):
@@ -131,10 +131,10 @@ class MixOfExperts(nn.Module):
         ], dim=1)  # (batch_size, num_experts, output_dim)
 
         # Compute expert weights using attention gate
-        attention_weights = self.attention_gate(expert_outputs)
+        attention_gate_weights = self.attention_gate(expert_outputs)
 
         # Apply attention weights to the expert outputs
-        weighted_expert_outputs = expert_outputs * attention_weights  # (batch_size, num_experts, output_dim)
+        weighted_expert_outputs = expert_outputs * attention_gate_weights  # (batch_size, num_experts, output_dim)
 
         # Combine weighted expert outputs
         expert_embeddings = weighted_expert_outputs.view(weighted_expert_outputs.size(0), -1)  # (batch_size, output_dim * num_experts)
