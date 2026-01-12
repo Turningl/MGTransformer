@@ -95,4 +95,4 @@ MGT is released under the [MIT](LICENSE) license.
 
 ## Contact
 
-If you have any questions, please reach out to zl16035056@gmail.com
+If you have any questions, please reach out to liang36365@mail.ustc.edu.cn
