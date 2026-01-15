@@ -1,6 +1,6 @@
 # Improving crystal material property prediction through multi-view graph transformer framework
 
-![1.png]
+![1.png](assert%2F1.png)
 
 ## Installation
 
