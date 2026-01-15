@@ -1,4 +1,4 @@
-# Improving crystal material property prediction through multi-view graph transformer framework
+# Improving crystal material property prediction with multi-view geometric graph transformer
 
 ![1.png](assert%2F1.png)
 
