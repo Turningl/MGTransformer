@@ -52,17 +52,17 @@ test_size: 4239
 #test_size: 588
 
 # max_len: 1280
-random_seed: 123
+random_seed: 123 # 123 234 345 456 567 678 789 890 901 012
 idx_save_file: _ids_train_val_test_
 
 epochs: 500  # 500 700
-batch_size: 8 # 8 16 32
+batch_size: 16 # 8 16 32
 num_workers: 0
 weight_decay: 0.0
 learning_rate: 0.0005 # 0.0005 0.0006
 warmup_steps: 10
 
-device: cuda:0
+device: cuda:3
 normalize: True  # scaling the targets by their mean and std
 
 pretrained_model_pt: pretraining_checkpoint_best.pt
@@ -105,3 +105,4 @@ model:
   use_cosine_similarity: True   # whether to use cosine similarity in NT-Xent loss (i.e. True/False)
   dropout: 0.0 # 0.0 0.1
   output_dim: 1  # 1
+
