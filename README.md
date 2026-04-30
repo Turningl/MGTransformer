@@ -42,7 +42,7 @@ This project uses CUDA 12.4. If using a different version, ensure your CUDA Tool
 
 ## Dataset 
 
-We have prepared the relevant processed datasets, which can be used directly for your convenience. Please download the pre-training, fine-tuning, and transfer datasets used in the paper [here](https://doi.org/10.5281/zenodo.15473642).
+We have prepared the relevant processed datasets, which can be used directly for your convenience. Please download the pre-training, fine-tuning, and transfer datasets used in the paper [here](https://doi.org/10.5281/zenodo.19903778).
 
 Once you have successfully downloaded the datasets, please follow these steps for organization:
 
@@ -54,9 +54,6 @@ Extract the pre-training dataset and unzip it under the `./dataset/pretrained` f
 
 Extract the fine-tuning and transfer learning datasets and unzip them under the `./dataset/fine-tuning` folder.
 
-#### Process dataset:
-
-If you prefer to handle each pre-training and fine-tuning dataset independently, we have provided relevant command lines and detailed instructions. You can find more information in the `./dataset/README.md` file.
 
 ## Pre-trained models
 
